@@ -1,17 +1,17 @@
 .previewSection { width: 100%; overflow-x: auto; padding-bottom: 24px; }
-.resumePage { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 16mm 18mm; background: #fff; color: #171717; box-shadow: 0 2px 16px rgb(0 0 0 / 12%); font-size: 13.5px; line-height: 1.55; }
-.personalInfo { margin-bottom: 6mm; text-align: center; }
-.personalInfo h1 { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.35; }
-.personalInfo p { margin: 5px 0 0; color: #333; }
-.resumeSection { margin-top: 5mm; }
-.resumeSection h2 { margin: 0 0 2.5mm; padding-bottom: 1.5mm; border-bottom: 1px solid #222; font-size: 17px; line-height: 1.35; break-after: avoid; page-break-after: avoid; }
-.entry { margin-top: 2.5mm; }
+.resumePage { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 12mm 15mm; background: #fff; color: #171717; box-shadow: 0 2px 16px rgb(0 0 0 / 12%); font-size: 12.75px; line-height: 1.45; }
+.personalInfo { margin-bottom: 4mm; text-align: center; }
+.personalInfo h1 { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.3; }
+.personalInfo p { margin: 3px 0 0; color: #333; }
+.resumeSection { margin-top: 3.5mm; }
+.resumeSection h2 { margin: 0 0 1.8mm; padding-bottom: 1mm; border-bottom: 1px solid #222; font-size: 16px; line-height: 1.3; break-after: avoid; page-break-after: avoid; }
+.entry { margin-top: 1.8mm; }
 .entry:first-of-type { margin-top: 0; }
 .keepTogether { break-inside: avoid; page-break-inside: avoid; }
 .entryHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; break-after: avoid; page-break-after: avoid; }
-.entryHeading strong { font-size: 14.5px; }
+.entryHeading strong { font-size: 13.5px; }
 .entryHeading span { flex: none; color: #333; }
-.entry p, .resumeSection > p { margin: 0.6mm 0 0; color: #222; }
+.entry p, .resumeSection > p { margin: 0.35mm 0 0; color: #222; }
 .subtitle { color: #333 !important; break-after: avoid; page-break-after: avoid; }
 .multiline { white-space: pre-wrap; overflow-wrap: anywhere; orphans: 3; widows: 3; }
 @media (max-width: 850px) { .resumePage { margin-left: 0; } }
