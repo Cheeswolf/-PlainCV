@@ -1,0 +1,14 @@
+.header { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid #dedede; }
+.inner { width: min(1120px, calc(100% - 32px)); min-height: 64px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { font-size: 20px; white-space: nowrap; }
+.actions { display: flex; align-items: center; gap: 12px; }
+.status { color: #666; font-size: 14px; }
+.secondary, .primary { border-radius: 6px; padding: 9px 16px; }
+.secondary { border: 1px solid #aaa; background: #fff; color: #222; }
+.primary { border: 1px solid #171717; background: #171717; color: #fff; }
+.secondary:focus-visible, .primary:focus-visible { outline: 3px solid #aaa; outline-offset: 2px; }
+@media (max-width: 600px) {
+  .inner { padding: 12px 0; align-items: flex-start; flex-direction: column; }
+  .actions { width: 100%; flex-wrap: wrap; }
+  .status { margin-right: auto; }
+}

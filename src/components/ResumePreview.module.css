@@ -1,0 +1,21 @@
+.previewSection { width: 100%; overflow-x: auto; padding-bottom: 24px; }
+.resumePage { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 24mm 20mm; background: #fff; color: #171717; box-shadow: 0 2px 16px rgb(0 0 0 / 12%); }
+.personalInfo { margin-bottom: 11mm; text-align: center; }
+.personalInfo h1 { margin: 0; font-size: 28px; font-weight: 700; line-height: 1.4; }
+.personalInfo p { margin: 8px 0 0; color: #333; }
+.resumePage { font-size: 14px; line-height: 1.65; }
+.resumeSection { margin-top: 8mm; }
+.resumeSection h2 { margin: 0 0 4mm; padding-bottom: 2mm; border-bottom: 1px solid #222; font-size: 18px; line-height: 1.4; break-after: avoid; page-break-after: avoid; }
+.entry { margin-top: 4mm; break-inside: avoid; page-break-inside: avoid; }
+.entry:first-of-type { margin-top: 0; }
+.entryHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+.entryHeading strong { font-size: 15px; }
+.entryHeading span { flex: none; color: #333; }
+.entry p, .resumeSection > p { margin: 1mm 0 0; color: #222; }
+.subtitle { color: #333 !important; }
+.multiline { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 850px) { .resumePage { margin-left: 0; } }
+@media print {
+  .previewSection { overflow: visible; padding: 0; }
+  .resumePage { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+}

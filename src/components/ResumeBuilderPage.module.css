@@ -1,0 +1,4 @@
+.main { width: min(1120px, calc(100% - 32px)); margin: 32px auto; display: flex; flex-direction: column; gap: 32px; }
+.bottomAction { display: flex; justify-content: center; }
+.printButton { border: 1px solid #171717; border-radius: 6px; padding: 11px 24px; background: #171717; color: #fff; }
+@media print { .main { width: 210mm; margin: 0; display: block; } }

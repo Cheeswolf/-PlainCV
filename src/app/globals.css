@@ -1,0 +1,36 @@
+:root {
+  color: #171717;
+  background: #f2f3f5;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: #f2f3f5; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.formSection { background: #fff; border: 1px solid #dedede; border-radius: 8px; padding: 28px; }
+.formSection h2 { margin: 0 0 24px; font-size: 22px; }
+.formSection label { font-weight: 600; }
+.formSection input, .formSection textarea { width: 100%; border: 1px solid #bbb; border-radius: 6px; padding: 11px 12px; color: #171717; background: #fff; }
+.formSection textarea { min-height: 128px; resize: vertical; line-height: 1.6; }
+.formSection input:focus, .formSection textarea:focus { outline: 2px solid #555; outline-offset: 1px; }
+.formGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
+.formField { display: flex; flex-direction: column; gap: 8px; }
+.formFieldFull { grid-column: 1 / -1; }
+.repeatedItem { border-top: 1px solid #ddd; margin-top: 22px; padding-top: 22px; }
+.repeatedItem:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+.sectionActions, .itemActions { display: flex; justify-content: flex-end; margin-top: 18px; }
+.addButton, .deleteButton { border-radius: 6px; padding: 9px 16px; background: #fff; }
+.addButton { border: 1px solid #333; color: #171717; }
+.deleteButton { border: 1px solid #aaa; color: #444; }
+@media (max-width: 720px) { .formGrid { grid-template-columns: 1fr; } .formFieldFull { grid-column: auto; } .formSection { padding: 22px 18px; } }
+
+@page { size: A4; margin: 0; }
+
+@media print {
+  html, body { background: #fff; }
+  .noPrint { display: none !important; }
+  .printArea { margin: 0 !important; padding: 0 !important; }
+}

@@ -1,0 +1,16 @@
+.section { background: #fff; border: 1px solid #dedede; border-radius: 8px; padding: 28px; }
+.intro h2 { margin: 0; font-size: 22px; }
+.intro p { margin: 10px 0 24px; color: #555; line-height: 1.6; }
+.list { display: flex; flex-direction: column; border-top: 1px solid #ddd; }
+.item { border-bottom: 1px solid #ddd; }
+.item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; font-weight: 600; }
+.viewText { color: #666; font-size: 14px; font-weight: 400; }
+.item[open] .viewText { font-size: 0; }
+.item[open] .viewText::after { content: "收起提示词"; font-size: 14px; }
+.content { padding: 0 0 20px; }
+.description { margin: 0 0 12px; color: #555; line-height: 1.6; }
+.content pre { margin: 0; padding: 18px; border: 1px solid #ddd; border-radius: 6px; background: #f7f7f7; color: #222; font: inherit; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.copyRow { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.copyRow button { border: 1px solid #333; border-radius: 6px; padding: 9px 16px; background: #fff; color: #171717; }
+.copyRow span { color: #333; font-size: 14px; }
+@media (max-width: 600px) { .section { padding: 22px 18px; } }
