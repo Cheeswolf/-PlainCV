@@ -9,10 +9,27 @@ describe("aiPrompts", () => {
   it("places all required truthfulness reminders in every prompt", () => {
     for (const prompt of aiPrompts) {
       expect(prompt.content).toContain("只使用我提供的真实信息");
-      expect(prompt.content).toContain("不编造任何量化结果");
+      expect(prompt.content).toContain("不得虚构数字");
       expect(prompt.content).toContain("不把“参与”改写成“主导”");
       expect(prompt.content).toContain("不把“了解”改写成“熟练”");
       expect(prompt.content).toContain("最终内容由我自行判断、核实和修改");
+    }
+  });
+
+  it("applies the supplied writing standards to each prompt type", () => {
+    expect(aiPrompts.find((prompt) => prompt.id === "internship")?.content).toContain("公司中实际完成的工作");
+    expect(aiPrompts.find((prompt) => prompt.id === "project")?.content).toContain("课程设计、竞赛、社团任务、个人实践");
+    expect(aiPrompts.find((prompt) => prompt.id === "jd")?.content).toContain("调整顺序、关键词和表达重点");
+    expect(aiPrompts.find((prompt) => prompt.id === "advantages")?.content).toContain("积极乐观");
+  });
+
+  it("requires four-character headings, STAR structure and truthful metrics for experience prompts", () => {
+    for (const id of ["internship", "project", "jd"] as const) {
+      const content = aiPrompts.find((prompt) => prompt.id === id)?.content ?? "";
+      expect(content).toContain("3—5条");
+      expect(content).toContain("**四字概括**");
+      expect(content).toContain("STAR法则");
+      expect(content).toContain("真实数据");
     }
   });
 });
