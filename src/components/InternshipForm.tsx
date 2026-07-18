@@ -1,5 +1,6 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 import type { ResumeData } from "@/types/resumeTypes";
+import { BoldTextarea } from "./BoldTextarea";
 
 export function InternshipForm() {
   const { control, register } = useFormContext<ResumeData>();
@@ -13,7 +14,7 @@ export function InternshipForm() {
       <div className="formField"><label htmlFor={`internship-${index}-role`}>岗位名称</label><input id={`internship-${index}-role`} {...register(`internships.${index}.role`)} /></div>
       <div className="formField"><label htmlFor={`internship-${index}-start`}>开始时间</label><input id={`internship-${index}-start`} {...register(`internships.${index}.startDate`)} /></div>
       <div className="formField"><label htmlFor={`internship-${index}-end`}>结束时间</label><input id={`internship-${index}-end`} {...register(`internships.${index}.endDate`)} /></div>
-      <div className="formField formFieldFull"><label htmlFor={`internship-${index}-content`}>工作内容</label><textarea id={`internship-${index}-content`} {...register(`internships.${index}.content`)} /></div>
+      <BoldTextarea id={`internship-${index}-content`} label="工作内容" name={`internships.${index}.content`} />
     </div><div className="itemActions"><button className="deleteButton" type="button" onClick={() => deleteItem(index)}>删除这段实习经历</button></div></div>)}
     <div className="sectionActions"><button className="addButton" type="button" onClick={addItem}>添加实习经历</button></div>
   </section>;

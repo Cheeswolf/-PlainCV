@@ -15,7 +15,13 @@
 .subtitle { color: #333 !important; break-after: avoid; page-break-after: avoid; }
 .multiline { white-space: pre-wrap; overflow-wrap: anywhere; orphans: 3; widows: 3; }
 @media (max-width: 850px) { .resumePage { margin-left: 0; } }
+@media screen and (min-width: 1301px) and (max-width: 1500px) { .resumePage { zoom: 0.84; } }
+@media screen and (min-width: 1101px) and (max-width: 1300px) { .resumePage { zoom: 0.7; } }
+@media screen and (min-width: 901px) and (max-width: 1100px) { .resumePage { zoom: 0.58; } }
+@media screen and (max-width: 480px) { .resumePage { zoom: 0.43; } }
+@media screen and (min-width: 481px) and (max-width: 650px) { .resumePage { zoom: 0.62; } }
+@media screen and (min-width: 651px) and (max-width: 900px) { .resumePage { zoom: 0.82; } }
 @media print {
   .previewSection { overflow: visible; padding: 0; }
-  .resumePage { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+  .resumePage { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; zoom: 1; }
 }

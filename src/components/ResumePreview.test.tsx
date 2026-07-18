@@ -18,7 +18,7 @@ describe("ResumePreview", () => {
     expect(text.indexOf("教育背景")).toBeLessThan(text.indexOf("实习经历"));
     expect(text.indexOf("实习经历")).toBeLessThan(text.indexOf("项目经历"));
     expect(text.indexOf("项目经历")).toBeLessThan(text.indexOf("个人优势"));
-    expect(screen.getByText((_, element) => element?.textContent === "第一行\n第二行")).toBeInTheDocument();
+    expect([...container.querySelectorAll("p")].some((element) => element.textContent === "第一行\n第二行")).toBe(true);
   });
 
   it("hides empty optional fields without stray separators", () => {

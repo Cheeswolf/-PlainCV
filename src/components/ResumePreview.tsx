@@ -1,4 +1,5 @@
 import type { ResumeData } from "@/types/resumeTypes";
+import { formatBoldText } from "./FormattedText";
 import styles from "./ResumePreview.module.css";
 
 interface ResumePreviewProps { data: ResumeData; }
@@ -33,7 +34,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
           {internships.map((item) => <div className={styles.entry} key={item.id}>
             <div className={styles.entryHeading}><strong>{item.company}</strong>{dateRange(item.startDate, item.endDate) && <span>{dateRange(item.startDate, item.endDate)}</span>}</div>
             {item.role && <p className={styles.subtitle}>{item.role}</p>}
-            {item.content && <p className={styles.multiline}>{item.content}</p>}
+            {item.content && <p className={styles.multiline}>{formatBoldText(item.content)}</p>}
           </div>)}
         </section>}
 
@@ -42,7 +43,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
           {projects.map((item) => <div className={styles.entry} key={item.id}>
             <div className={styles.entryHeading}><strong>{item.name}</strong>{dateRange(item.startDate, item.endDate) && <span>{dateRange(item.startDate, item.endDate)}</span>}</div>
             {item.projectRole && <p className={styles.subtitle}>项目角色：{item.projectRole}</p>}
-            {item.description && <p className={styles.multiline}>{item.description}</p>}
+            {item.description && <p className={styles.multiline}>{formatBoldText(item.description)}</p>}
           </div>)}
         </section>}
 

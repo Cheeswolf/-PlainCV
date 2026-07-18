@@ -1,5 +1,6 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 import type { ResumeData } from "@/types/resumeTypes";
+import { BoldTextarea } from "./BoldTextarea";
 
 export function ProjectForm() {
   const { control, register } = useFormContext<ResumeData>();
@@ -13,7 +14,7 @@ export function ProjectForm() {
       <div className="formField"><label htmlFor={`project-${index}-role`}>项目角色（选填）</label><input id={`project-${index}-role`} {...register(`projects.${index}.projectRole`)} /></div>
       <div className="formField"><label htmlFor={`project-${index}-start`}>开始时间（选填）</label><input id={`project-${index}-start`} {...register(`projects.${index}.startDate`)} /></div>
       <div className="formField"><label htmlFor={`project-${index}-end`}>结束时间（选填）</label><input id={`project-${index}-end`} {...register(`projects.${index}.endDate`)} /></div>
-      <div className="formField formFieldFull"><label htmlFor={`project-${index}-description`}>项目描述</label><textarea id={`project-${index}-description`} {...register(`projects.${index}.description`)} /></div>
+      <BoldTextarea id={`project-${index}-description`} label="项目描述" name={`projects.${index}.description`} />
     </div><div className="itemActions"><button className="deleteButton" type="button" onClick={() => deleteItem(index)}>删除这个项目</button></div></div>)}
     <div className="sectionActions"><button className="addButton" type="button" onClick={addItem}>添加项目经历</button></div>
   </section>;

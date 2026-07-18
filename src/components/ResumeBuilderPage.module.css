@@ -1,4 +1,24 @@
-.main { width: min(1120px, calc(100% - 32px)); margin: 32px auto; display: flex; flex-direction: column; gap: 32px; }
+.main { width: min(1480px, calc(100% - 32px)); margin: 28px auto; display: flex; flex-direction: column; gap: 24px; }
+.workspace { display: grid; grid-template-columns: minmax(440px, 560px) minmax(0, 1fr); align-items: start; gap: 28px; }
+.editorColumn { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.previewColumn { position: sticky; top: 80px; max-height: calc(100vh - 96px); min-width: 0; overflow: auto; padding: 4px 0 20px; }
+.mobileViewSwitch { display: none; }
 .bottomAction { display: flex; justify-content: center; }
 .printButton { border: 1px solid #171717; border-radius: 6px; padding: 11px 24px; background: #171717; color: #fff; }
-@media print { .main { width: 210mm; margin: 0; display: block; } }
+
+@media (max-width: 900px) {
+  .main { margin-top: 20px; }
+  .mobileViewSwitch { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border: 1px solid #ccc; border-radius: 8px; background: #e8e8e8; }
+  .mobileViewSwitch button { border: 0; border-radius: 5px; padding: 10px 16px; background: transparent; color: #444; }
+  .mobileViewSwitch .activeViewButton { background: #fff; color: #171717; font-weight: 700; box-shadow: 0 1px 4px rgb(0 0 0 / 12%); }
+  .workspace { display: block; }
+  .previewColumn { position: static; max-height: none; overflow: visible; padding-top: 0; }
+  .mobileHidden { display: none; }
+}
+
+@media print {
+  .main { width: 210mm; margin: 0; display: block; }
+  .workspace { display: block; }
+  .editorColumn, .mobileViewSwitch { display: none !important; }
+  .previewColumn { display: block !important; position: static; max-height: none; overflow: visible; padding: 0; }
+}
