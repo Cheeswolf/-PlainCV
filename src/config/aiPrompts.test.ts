@@ -29,6 +29,10 @@ describe("aiPrompts", () => {
       expect(content).toContain("3—5条");
       expect(content).toContain("**四字概括**");
       expect(content).toContain("STAR法则");
+      expect(content).toContain("四个环节都不能缺失");
+      expect(content).toContain("每个环节分别用1—2个高度概括的短句");
+      expect(content).toContain("以1句为主");
+      expect(content).toContain("按顺序合并为一段连贯的工作描述");
       expect(content).toContain("真实数据");
     }
   });
