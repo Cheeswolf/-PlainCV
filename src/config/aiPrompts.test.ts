@@ -3,7 +3,7 @@ import { aiPrompts } from "./aiPrompts";
 
 describe("aiPrompts", () => {
   it("contains exactly the four required categories", () => {
-    expect(aiPrompts.map((prompt) => prompt.id)).toEqual(["internship", "project", "jd", "advantages"]);
+    expect(aiPrompts.map((prompt) => prompt.id)).toEqual(["internship", "project", "advantages"]);
   });
 
   it("places all required truthfulness reminders in every prompt", () => {
@@ -19,12 +19,11 @@ describe("aiPrompts", () => {
   it("applies the supplied writing standards to each prompt type", () => {
     expect(aiPrompts.find((prompt) => prompt.id === "internship")?.content).toContain("公司中实际完成的工作");
     expect(aiPrompts.find((prompt) => prompt.id === "project")?.content).toContain("课程设计、竞赛、社团任务、个人实践");
-    expect(aiPrompts.find((prompt) => prompt.id === "jd")?.content).toContain("调整顺序、关键词和表达重点");
     expect(aiPrompts.find((prompt) => prompt.id === "advantages")?.content).toContain("积极乐观");
   });
 
   it("requires four-character headings, STAR structure and truthful metrics for experience prompts", () => {
-    for (const id of ["internship", "project", "jd"] as const) {
+    for (const id of ["internship", "project"] as const) {
       const content = aiPrompts.find((prompt) => prompt.id === id)?.content ?? "";
       expect(content).toContain("3—5条");
       expect(content).toContain("**四字概括**");

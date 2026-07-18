@@ -1,5 +1,5 @@
 export interface AiPrompt {
-  id: "internship" | "project" | "jd" | "advantages";
+  id: "internship" | "project" | "advantages";
   title: string;
   description: string;
   content: string;
@@ -66,30 +66,6 @@ ${experienceFormat}
 
 真实成果或数据：
 【请填写作品、交付物、比赛结果、用户反馈、效率变化或其他可核实结果；没有则写“暂无”】`,
-  },
-  {
-    id: "jd",
-    title: "根据JD定制实习经历和项目经历",
-    description: "对照JD重排真实经历的重点和关键词，并统一为四字概括与STAR格式。",
-    content: `你是一名简历内容编辑。请对照目标岗位JD，定制我已有的实习经历和项目经历。先分析JD看重的职责、工具和能力，再从我的原始信息中选择有事实依据的内容，调整顺序、关键词和表达重点。
-
-${sharedRules}
-
-${experienceFormat}
-
-额外要求：
-1. 分别输出“实习经历”和“项目经历”；某一类没有真实信息时直接说明，不得互相冒充。
-2. JD中出现但我的经历没有体现的要求，单独列为“可补充核实的信息”，不要写进简历成稿。
-3. 删除与JD关联较弱的重复表达，但不得删除会改变事实边界的关键信息。
-
-目标岗位JD：
-【请粘贴JD】
-
-原始实习经历：
-【请粘贴真实公司、岗位、工作内容和成果数据】
-
-原始项目经历：
-【请粘贴真实项目背景、个人角色、行动和成果数据】`,
   },
   {
     id: "advantages",
