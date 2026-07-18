@@ -20,7 +20,7 @@ export function ResumePreview({ data }: ResumePreviewProps) {
 
         {education.length > 0 && <section className={styles.resumeSection}>
           <h2>教育背景</h2>
-          {education.map((item) => <div className={styles.entry} key={item.id}>
+          {education.map((item) => <div className={`${styles.entry} ${styles.keepTogether}`} key={item.id}>
             <div className={styles.entryHeading}><strong>{item.school}</strong>{dateRange(item.startDate, item.endDate) && <span>{dateRange(item.startDate, item.endDate)}</span>}</div>
             {[item.major, item.degree].some(Boolean) && <p>{[item.major, item.degree].filter(Boolean).join("｜")}</p>}
             {item.courses && <p>主修课程：{item.courses}</p>}
