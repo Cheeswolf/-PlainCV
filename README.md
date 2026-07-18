@@ -128,13 +128,31 @@ npm run start      # 启动生产构建
 - 更换浏览器、设备或清理浏览器数据后无法自动恢复
 - 项目不提供云端同步、账号系统或后端备份
 
+## 官方部署的“支持作者”功能
+
+公开仓库和本地启动默认不显示“支持作者”。该功能只面向项目维护者的官方托管版本，真实微信和支付宝收款码不会提交到 Git 仓库，也不会放在 `public` 目录。
+
+官方部署需要在托管平台中设置以下服务端环境变量：
+
+```dotenv
+PLAINCV_SUPPORT_ENABLED=true
+PLAINCV_SUPPORT_WECHAT_QR_BASE64=<微信收款码 PNG 的 Base64>
+PLAINCV_SUPPORT_WECHAT_RECIPIENT=<供用户核对的微信收款人提示>
+PLAINCV_SUPPORT_ALIPAY_QR_BASE64=<支付宝收款码 PNG 的 Base64>
+PLAINCV_SUPPORT_ALIPAY_RECIPIENT=<供用户核对的支付宝收款人提示>
+```
+
+二维码必须是 PNG，既可填写纯 Base64，也可填写 `data:image/png;base64,` 开头的完整值。全部变量均为服务端变量，不要添加 `NEXT_PUBLIC_` 前缀。只有开关为 `true` 且两张二维码均有效时，入口才会显示。
+
+该功能只是自愿支持入口，不接入支付 API，不创建订单，也不判断支付结果。二维码展示给访客后仍可能被获取或截图；服务端配置的作用是避免它随开源仓库和客户端源码一起公开分发。
+
 ## 项目结构
 
 ```text
 src/
 ├─ app/          # Next.js 页面入口和全局样式
 ├─ components/   # 编辑器、表单、预览、提示词和打印组件
-├─ config/       # AI 辅助提示词配置
+├─ config/       # AI 辅助提示词与官方部署配置
 ├─ data/         # 默认简历数据
 ├─ hooks/        # localStorage 保存与恢复逻辑
 ├─ test/         # 测试环境配置

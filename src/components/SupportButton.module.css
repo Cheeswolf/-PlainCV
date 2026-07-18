@@ -1,0 +1,65 @@
+.dialog {
+  width: min(680px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 1px solid #d2d2d2;
+  border-radius: 12px;
+  color: #171717;
+  background: #fff;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 18%);
+}
+
+.dialog::backdrop { background: rgb(0 0 0 / 44%); }
+
+.panel { padding: 24px; overflow: auto; }
+
+.heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.heading h2, .channel h3, .heading p, .channel p, .notice { margin: 0; }
+.heading h2 { font-size: 22px; }
+.heading p, .channel p, .notice { color: #666; line-height: 1.6; }
+.heading p { margin-top: 6px; }
+
+.closeButton {
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding: 7px 12px;
+  background: #fff;
+  color: #222;
+}
+
+.channels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.qrCode { width: min(100%, 240px); height: auto; }
+.notice { margin-top: 20px; font-size: 14px; }
+
+.closeButton:focus-visible {
+  outline: 3px solid #aaa;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .panel { padding: 18px; }
+  .channels { grid-template-columns: 1fr; }
+}
